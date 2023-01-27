@@ -1,0 +1,36 @@
+<div>
+
+	<label for="filterOptions">opciones de filtro: </label>
+	<select id="filterOptions" #filterChosen (change)="SortStudents(EstudiantesId1a6,filterChosen)">
+  <option data-sort="1">todos los estudiantes</option>
+  <option data-sort="2" >estudiantes id 1 a 6</option>
+  <option data-sort="3">estudiantes edad mayor a 30</option>
+   <option data-sort="6">telefono finalizado en 4</option>
+  <option data-sort="7">nombre comienza con b</option>
+</select>
+
+
+	<h1>Informacion de Estudiantes</h1>
+
+
+	<table *ngIf="currentFilter!=4">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>age</th>
+			<th>email</th>
+			<th>phone</th>
+			<th>address</th>
+
+		</tr>
+		<tr *ngFor="let student of SortedStudentList">
+			<td>{{student.id}}</td>
+			<td>{{student.name}}</td>
+			<td>{{student.age}}</td>
+			<td>{{student.email}}</td>
+			<td>{{student.phone}}</td>
+			<td>{{student.address}}</td>
+			
+		</tr>
+	</table>
+</div>
