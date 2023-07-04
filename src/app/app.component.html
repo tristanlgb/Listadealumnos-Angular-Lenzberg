@@ -1,0 +1,40 @@
+<div>
+
+	<label for="filterOptions">filter options: </label>
+	<select id="filterOptions" #filterChosen (change)="SortStudents(idBetween1to6,filterChosen)">
+  <option data-sort="1">Todos los estudiantes</option>
+  <option data-sort="2" >Entre 1 y 6 años</option>
+  <option data-sort="3">mayores de 30</option>
+  <option data-sort="4">Grapefruit</option>
+  <option data-sort="5">mayores de 90</option>
+  <option data-sort="6">telefono finaliza en 4</option>
+  <option data-sort="7">comienza nombre con b</option>
+</select>
+
+
+	<h1>STUDENTS INFORMATION</h1>
+
+	<img *ngIf="currentFilter==4" src="https://fortmyersoliveoil.com/wp-content/uploads/2016/06/grapefruit_1.jpg" />
+
+
+	<table *ngIf="currentFilter!=4">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>age</th>
+			<th>email</th>
+			<th>phone</th>
+			<th>address</th>
+			<th>avg_grade</th>
+		</tr>
+		<tr *ngFor="let student of SortedStudentList">
+			<td>{{student.id}}</td>
+			<td>{{student.name}}</td>
+			<td>{{student.age}}</td>
+			<td>{{student.email}}</td>
+			<td>{{student.phone}}</td>
+			<td>{{student.address}}</td>
+			<td>{{student.avg_grade}}</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,7 @@
+/* Add application styles & imports to this file! */
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#d3d3d3;
+    margin-top:5%;
+}
